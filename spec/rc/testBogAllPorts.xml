@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bajaObjectGraph version="1.1">
+  <p h="1" c="1" m="b=baja" t="b:Station">
+    <!-- /Services -->
+    <p n="Services" h="2" t="b:ServiceContainer">
+      <!-- /Services/WebService -->
+      <p n="WebService" h="17" m="w=web" t="w:WebService">
+        <p n="httpPort" v="9088"/>
+        <p n="httpsPort" v="9089"/>
+        <p n="httpsEnabled" v="true"/>
+        <p n="httpsOnly" v="true"/>
+        <p n="authenticationScheme" t="w:AuthenticationType" v="cookie"/>
+        <p n="enabled" f="h"/>
+      </p>
+    </p>
+    <!-- /Drivers -->
+    <p n="Drivers" h="1a" m="d=driver" t="d:DriverContainer">
+      <!-- /Drivers/NiagaraNetwork -->
+      <p n="NiagaraNetwork" h="1b" m="nd=niagaraDriver" t="nd:NiagaraNetwork">
+        <p n="foxService" h="21" t="nd:NiagaraFoxService">
+          <p n="port" v="1912"/>
+          <p n="foxsPort" v="4912"/>
+          <p n="foxsEnabled" v="true"/>
+          <p n="foxsOnly" v="true"/>
+        </p>
+      </p>
+    </p>
+  </p>
+</bajaObjectGraph>
