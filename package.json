@@ -1,6 +1,6 @@
 {
   "name": "niagara-station",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Start and stop Niagara stations in node",
   "repository": {
     "type": "git",
