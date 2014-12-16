@@ -1,27 +1,27 @@
 {
   "name": "niagara-station",
-  "version": "0.2.0",
+  "version": "0.1.8",
   "dependencies": {
     "colors": {
       "version": "0.6.2",
-      "from": "colors@~0.6.2"
+      "from": "colors@0.6.2"
     },
     "ncp": {
       "version": "0.5.1",
-      "from": "ncp@~0.5.0"
+      "from": "ncp@0.5.1"
     },
     "node-zip": {
       "version": "1.1.0",
-      "from": "node-zip@~1.1.0",
+      "from": "node-zip@1.1.0",
       "dependencies": {
         "jszip": {
           "version": "2.1.1",
-          "from": "jszip@2.1.1",
+          "from": "https://registry.npmjs.org/jszip/-/jszip-2.1.1.tgz",
           "resolved": "https://registry.npmjs.org/jszip/-/jszip-2.1.1.tgz",
           "dependencies": {
             "zlibjs": {
               "version": "0.1.8",
-              "from": "zlibjs@~0.1.7"
+              "from": "zlibjs@0.1.8"
             }
           }
         }
@@ -29,17 +29,21 @@
     },
     "node.extend": {
       "version": "1.0.10",
-      "from": "node.extend@~1.0.10",
+      "from": "node.extend@1.0.10",
       "dependencies": {
         "is": {
           "version": "0.3.0",
-          "from": "is@~0.3.0"
+          "from": "is@0.3.0"
         }
       }
     },
+    "underscore": {
+      "version": "1.7.0",
+      "from": "underscore@"
+    },
     "xmldom": {
       "version": "0.1.19",
-      "from": "xmldom@~0.1.19"
+      "from": "xmldom@0.1.19"
     }
   }
 }
