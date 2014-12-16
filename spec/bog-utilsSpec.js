@@ -92,27 +92,27 @@ describe("bog-utils", function () {
       });
     });
 
-    describe("#set", function () {
+    describe("#setValue", function () {
       it("returns an Element instance", function () {
-        expect(bog.set("/").parentNode).toBeDefined();
+        expect(bog.setValue("/").parentNode).toBeDefined();
       });
 
       it("accepts a slot path from station root", function () {
-        expect(bog.set("/Services").getAttribute('n'))
+        expect(bog.setValue("/Services").getAttribute('n'))
           .toBe('Services');
 
-        expect(bog.set("/Drivers/NiagaraNetwork").getAttribute('n'))
+        expect(bog.setValue("/Drivers/NiagaraNetwork").getAttribute('n'))
           .toBe('NiagaraNetwork');
       });
 
       it("returns undefined if non-final selector not found", function () {
-        expect(bog.set('/Drivers/Whoops/createMe')).toBeUndefined();
+        expect(bog.setValue('/Drivers/Whoops/createMe')).toBeUndefined();
       });
 
       it("appends final selector if it does not exist", function () {
         var nonExistentPath = '/Drivers/NiagaraNetwork/createMe';
         expect(bog.select(nonExistentPath)).toBeUndefined();
-        expect(bog.set(nonExistentPath)).toBeDefined();
+        expect(bog.setValue(nonExistentPath)).toBeDefined();
         expect(bog.select(nonExistentPath)).toBeDefined();
       });
 
@@ -120,9 +120,30 @@ describe("bog-utils", function () {
         var path = '/Drivers/NiagaraNetwork/newSlot';
         expect(bog.select(path)).toBeUndefined();
 
-        var newElem = bog.set(path, 'newValue');
+        var newElem = bog.setValue(path, 'newValue');
         expect(newElem.parentNode).toBe(bog.select('/Drivers/NiagaraNetwork'));
         expect(newElem.getAttribute('v')).toBe('newValue');
+      });
+    });
+    
+    describe('#addNode()', function () {
+      it('adds a new node and returns it', function () {
+        var path = '/Drivers/NiagaraNetwork',
+            node = bog.addNode(path, 'newNode', 'b:Component');
+        expect(node.getAttribute('n')).toBe('newNode');
+        expect(node.getAttribute('t')).toBe('b:Component');
+        expect(node.parentNode).toBe(bog.select(path));
+      });
+      
+      it('just returns existing node if already exists', function () {
+        var nnNode = bog.select('/Drivers/NiagaraNetwork'),
+            newNode = bog.addNode('/Drivers', 'NiagaraNetwork', 'nd:NiagaraNetwork');
+        expect(newNode).toBe(nnNode);
+      });
+      
+      it('returns undefined if selector not found', function () {
+        expect(bog.addNode('/Drivers/NiagaraNetwork/Whoops', 'newString', 'b:String'))
+          .toBeUndefined();
       });
     });
   });

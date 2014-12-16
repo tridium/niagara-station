@@ -27,7 +27,7 @@ describe("Station", function () {
     it("applies httpPort override", function (done) {
       Station.$applyBogOverrides(bog, { httpPort: '4321' });
 
-      var elem = bog.select('/Services/WebService/httpPort');
+      var elem = bog.select('/Services/WebService/httpPort/publicServerPort');
       expect(elem.getAttribute('v')).toBe('4321');
 
       done();
@@ -36,7 +36,7 @@ describe("Station", function () {
     it("applies httpsPort override", function (done) {
       Station.$applyBogOverrides(bog, { httpsPort: '4322' });
 
-      var elem = bog.select('/Services/WebService/httpsPort');
+      var elem = bog.select('/Services/WebService/httpsPort/publicServerPort');
       expect(elem.getAttribute('v')).toBe('4322');
 
       done();
@@ -45,7 +45,7 @@ describe("Station", function () {
     it("applies foxPort override", function (done) {
       Station.$applyBogOverrides(bog, { foxPort: '4323' });
 
-      var elem = bog.select('/Drivers/NiagaraNetwork/foxService/port');
+      var elem = bog.select('/Drivers/NiagaraNetwork/foxService/foxPort/publicServerPort');
       expect(elem.getAttribute('v')).toBe('4323');
 
       done();
@@ -54,7 +54,7 @@ describe("Station", function () {
     it("applies foxsPort override", function (done) {
       Station.$applyBogOverrides(bog, { foxsPort: '4324' });
 
-      var elem = bog.select('/Drivers/NiagaraNetwork/foxService/foxsPort');
+      var elem = bog.select('/Drivers/NiagaraNetwork/foxService/foxsPort/publicServerPort');
       expect(elem.getAttribute('v')).toBe('4324');
 
       done();
