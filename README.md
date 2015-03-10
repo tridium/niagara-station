@@ -11,7 +11,19 @@ var config = {
   cwd: 'd:\\niagara\\r40\\niagara_home\\bin',
   command: 'station',
   stationName: 'node',
-  startedString: 'niagara>'
+  startedString: 'niagara>',
+  log: function (msg, logLevel, pkg) {
+    //you can optionally specify your own handler for console output.
+    if (pkg === 'web.jetty') {
+      console.log('Jetty did something.');
+    }
+    
+    if (logLevel === 'SEVERE') {
+      console.error('oh no! ' + msg);
+    } else {
+      console.log(msg);
+    }
+  }
 };
 
 require('niagara-station')(config, function (err, station) {
