@@ -76,20 +76,12 @@ Default value: `'WARNING'`
 
 The logging level to capture from the station and output to the console. Available values are `NONE`, `SEVERE`, `WARNING`, `INFO`, `CONFIG`, `FINE`, `FINER`, `FINEST`, and `ALL`. Note that `ALL` is required to capture messages without a logging level (direct `System.out.println()` calls, for instance).
  
-##### `config.log(string msg, string [level])`
+##### `config.log(string msg, string [level], string [pkg])`
 
 | Name    | Type   | Description                                    |
 |---------|--------|------------------------------------------------|
 | msg     | string | Message.                                       |
-| [level] | string | Log level (optional). Default value at `INFO`. |
+| [level] | string | Log level, e.g. `WARNING` or `INFO`. Will be `undefined` if no log level specified. |
+| [pkg]   | string | Package originating the log message, e.g. `web.jetty`. Will be `undefined` if no package specified. |
 
-Function to log console info from station (messages with a log level of `INFO` or finer).
-
-##### `config.err(string msg, string [level])`
-
-| Name    | Type   | Description                                    |
-|---------|--------|------------------------------------------------|
-| msg     | string | Message.                                       |
-| [level] | string | Log level (optional). Default value at `INFO`. |
-
-Function to log error info from station (messages with a log level or `WARNING` or coarser).
+Function to log console info from station.
