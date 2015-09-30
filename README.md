@@ -72,6 +72,8 @@ Default value: `false`
 Set to true if you want to force copying a station folder to `NIAGARA_HOME` before starting the station (for starting up a fresh station during unit tests, for example).
 
 ##### `config.sourceStationFolder`
+Type:   `string`
+Default value: `undefined`
 
 Required if `forceCopy` is `true`.
 The location of the station to copy.
@@ -97,3 +99,17 @@ The logging level to capture from the station and output to the log. Available v
 | [pkg]   | string | Package originating the log message, e.g. `web.jetty`. Will be `undefined` if no package specified. |
 
 Optional callback to handle console output from the station. If omitted, a default handler will be used that simply logs the station output directly to the console.
+
+##### `config.jvmArgs`
+Type:   `Array`
+Default value: `[]`
+
+An array of additional JVM arguments to pass to `station.exe`. For example:
+`jvmArgs: [ '-Xmx1024m' ]`
+
+##### `config.systemProperties`
+Type:   `Object`
+Default value: `{}`
+
+A mapping of system property names to values, to pass to `station.exe`. For
+example: `systemProperties: { 'niagara.lang': 'en' }`
