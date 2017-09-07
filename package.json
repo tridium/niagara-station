@@ -24,10 +24,10 @@
     "underscore": "^1.7.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.4",
-    "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-jasmine-node": "~0.2.1"
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-jasmine-nodejs": "^1.6.0"
   },
   "scripts": {
     "test": "grunt jshint jasmine_node"

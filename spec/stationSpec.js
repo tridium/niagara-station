@@ -8,9 +8,32 @@ var Station = require('../lib/station'),
 describe("Station", function () {
 
   describe("constructor", function () {
+    let _home, _userHome;
+    beforeEach(function () {
+      _home = process.env.NIAGARA_HOME;
+      _userHome = process.env.NIAGARA_USER_HOME;
+    });
+
+    afterEach(function () {
+      process.env.NIAGARA_HOME = _home;
+      process.env.NIAGARA_USER_HOME = _userHome;
+    });
+
     it("accepts a config object", function () {
       var s = new Station({ test: 'hi' });
       expect(s.$config.test).toBe('hi');
+    });
+
+    it('uses given cwd when NIAGARA_HOME not present', function () {
+      delete process.env.NIAGARA_HOME;
+      let s = new Station({ cwd: 'testcwd' });
+      expect(s.$config.cwd).toBe('testcwd');
+    });
+
+    it('uses given stationsDir when NIAGARA_USER_HOME not present', function () {
+      delete process.env.NIAGARA_USER_HOME;
+      let s = new Station({ stationsDir: 'testStationsDir' });
+      expect(s.$config.stationsDir).toBe('testStationsDir');
     });
   });
 
