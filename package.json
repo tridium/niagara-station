@@ -1,6 +1,6 @@
 {
   "name": "niagara-station",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Start and stop Niagara stations in node",
   "repository": {
     "type": "git",
@@ -30,6 +30,6 @@
     "grunt-jasmine-nodejs": "^1.6.0"
   },
   "scripts": {
-    "test": "grunt jshint jasmine_node"
+    "test": "grunt jshint jasmine_nodejs"
   }
 }
