@@ -1,29 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bajaObjectGraph version="1.1">
-  <p h="1" c="1" m="b=baja" t="b:Station">
-    <!-- /Services -->
-    <p n="Services" h="2" t="b:ServiceContainer">
-      <!-- /Services/WebService -->
-      <p n="WebService" h="17" m="w=web" t="w:WebService">
-        <p n="httpPort" v="9088"/>
-        <p n="httpsPort" v="9089"/>
-        <p n="httpsEnabled" v="true"/>
-        <p n="httpsOnly" v="true"/>
-        <p n="authenticationScheme" t="w:AuthenticationType" v="cookie"/>
-        <p n="enabled" f="h"/>
-      </p>
-    </p>
-    <!-- /Drivers -->
-    <p n="Drivers" h="1a" m="d=driver" t="d:DriverContainer">
-      <!-- /Drivers/NiagaraNetwork -->
-      <p n="NiagaraNetwork" h="1b" m="nd=niagaraDriver" t="nd:NiagaraNetwork">
-        <p n="foxService" h="21" t="nd:NiagaraFoxService">
-          <p n="port" v="1912"/>
-          <p n="foxsPort" v="4912"/>
-          <p n="foxsEnabled" v="true"/>
-          <p n="foxsOnly" v="true"/>
-        </p>
-      </p>
-    </p>
+<bajaObjectGraph version="4.0" reversibleEncodingKeySource="none" reversibleEncodingValidator="[null.1]=" >
+<p h="2" c="1" m="b=baja" t="b:Station">
+ <p n="stationName" v="testBogAllPorts"/>
+ <p n="Services" h="3" t="b:ServiceContainer">
+   <p n="enabled" f="h"/>
+   <p n="servlet" h="29" t="box:BoxServlet">
+   </p>
+   <p n="webSocketAcceptor" h="2a" t="box:BoxWebSocketAcceptor">
+   </p>
+   <p n="foxAcceptor" h="2b" t="box:FoxBoxAcceptor">
+   </p>
+   <p n="sys" h="2c" t="box:SysChannel">
+   </p>
+   <p n="reg" h="2d" t="box:RegistryChannel">
+   </p>
+   <p n="timeZone" h="161" t="box:TimeZoneChannel">
+   </p>
+   <p n="unit" h="2e" t="box:UnitChannel">
+   </p>
+   <p n="history" h="2f" t="box:HistoryChannel">
+   </p>
+   <p n="alarm" h="30" t="box:AlarmChannel">
+   </p>
+   <p n="ssession" h="31" t="box:ServerSessionChannel">
+   </p>
+   <p n="ord" h="32" t="box:OrdChannel">
+   </p>
+   <p n="transfer" h="e3" t="box:TransferChannel">
+   </p>
+   <!-- /Services/BoxService/hierarchy -->
+   <p n="hierarchy" h="33" t="hierarchy:HierarchyBoxChannel">
+   </p>
   </p>
+  <!-- /Services/FoxService -->
+  <p n="FoxService" h="34" m="f=fox" t="f:FoxService">
+   <p n="foxPort" h="35" t="b:ServerPort">
+    <p n="publicServerPort" v="1911"/>
+   </p>
+   <p n="foxEnabled" v="false"/>
+   <p n="foxsPort" h="36" t="b:ServerPort">
+    <p n="publicServerPort" f="4" t="b:Integer" v="4911"/>
+   </p>
+   <p n="foxsEnabled" v="true"/>
+   <p n="foxsOnly" v="true"/>
+   <p n="serverConnections" h="37" t="f:ServerConnections">
+   </p>
+  </p>
+  </p>
+  <!-- /Services/WebService -->
+  <p n="WebService" h="b8" t="w:WebService">
+   <p n="httpPort" h="b9" t="b:ServerPort">
+    <p n="publicServerPort" v="80"/>
+   </p>
+   <p n="httpEnabled" v="false"/>
+   <p n="httpsPort" h="ba" t="b:ServerPort">
+    <p n="publicServerPort" f="4" t="b:Integer" v="443"/>
+   </p>
+   <p n="httpsEnabled" v="true"/>
+   <p n="httpsOnly" v="true"/>
+   <p n="clientEnvironments" h="bb" t="w:ClientEnvironments">
+    <p n="envServlet" h="bc" t="w:ClientEnvServlet">
+    </p>
+    <!-- /Services/WebService/clientEnvironments/mobile -->
+    <p n="mobile" h="bd" t="w:MobileClientEnvironment">
+    </p>
+   </p>
+   <!-- /Services/WebService/JettyWebServer -->
+   <p n="JettyWebServer" h="be" m="j=jetty" t="j:JettyWebServer">
+   </p>
+  </p>
+ </p>
+</p>
 </bajaObjectGraph>

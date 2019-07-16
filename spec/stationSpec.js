@@ -68,7 +68,7 @@ describe("Station", function () {
     it("applies foxPort override", function (done) {
       Station.$applyBogOverrides(bog, { foxPort: '4323' });
 
-      var elem = bog.select('/Drivers/NiagaraNetwork/foxService/foxPort/publicServerPort');
+      var elem = bog.select('/Services/FoxService/foxPort/publicServerPort');
       expect(elem.getAttribute('v')).toBe('4323');
 
       done();
@@ -77,7 +77,7 @@ describe("Station", function () {
     it("applies foxsPort override", function (done) {
       Station.$applyBogOverrides(bog, { foxsPort: '4324' });
 
-      var elem = bog.select('/Drivers/NiagaraNetwork/foxService/foxsPort/publicServerPort');
+      var elem = bog.select('/Services/FoxService/foxsPort/publicServerPort');
       expect(elem.getAttribute('v')).toBe('4324');
 
       done();
