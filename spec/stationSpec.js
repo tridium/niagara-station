@@ -41,7 +41,7 @@ describe("Station", function () {
     var bog;
 
     beforeEach(function (done) {
-      parseBog(BOG_FILE_ALL_PORTS, function (err, b) {
+      parseBog(BOG_FILE_ALL_PORTS, function (ignore, b) {
         bog = b;
         done();
       });

@@ -13,7 +13,7 @@ var fs = require('fs'),
 describe("bog-utils", function () {
   describe(".parseBog() (static)", function () {
     it("decompresses a .bog file and returns a Bog object", function (done) {
-      parseBog(BOG_FILE_ALL_PORTS, function (err, bog) {
+      parseBog(BOG_FILE_ALL_PORTS, function (ignore, bog) {
         expect(bog).toEqual(jasmine.any(Bog));
         done();
       });
@@ -44,7 +44,7 @@ describe("bog-utils", function () {
   describe(".Bog", function () {
     var bog;
     beforeEach(function (done) {
-      parseBog(BOG_FILE_ALL_PORTS, function (err, b) {
+      parseBog(BOG_FILE_ALL_PORTS, function (ignore, b) {
         bog = b;
         done();
       });
