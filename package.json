@@ -16,20 +16,27 @@
   },
   "main": "lib/station",
   "dependencies": {
-    "colors": "~0.6.2",
-    "node.extend": "~1.0.10",
-    "ncp": "~0.5.0",
-    "xmldom": "~0.1.19",
-    "node-zip": "~1.1.0",
-    "underscore": "^1.7.0"
+    "@xmldom/xmldom": "^0.9.12",
+    "colors": "~1.4.0",
+    "ncp": "~2.0.0",
+    "node-zip": "~1.1.1",
+    "node.extend": "~2.0.3",
+    "underscore": "^1.13.8"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-jasmine-nodejs": "^1.6.0"
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "docdash": "^2.0.2",
+    "eslint": "^10.13.0",
+    "eslint-plugin-promise": "^7.3.0",
+    "eslint-plugin-standard": "^4.1.0",
+    "globals": "^17.13.0",
+    "grunt": "^1.6.3",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-exec": "^3.0.0",
+    "jasmine": "^7.0.0",
+    "jsdoc": "^4.0.5"
   },
   "scripts": {
-    "test": "grunt jshint jasmine_nodejs"
+    "test": "grunt eslint jasmine"
   }
 }
